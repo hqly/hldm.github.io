@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+</head>
+<link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+<!--<link rel="stylesheet" href="./fonts/demo-files/demo.css">-->
+<link rel="stylesheet" href="./fonts/style.css">
+<link rel="stylesheet" href="./css/serial.css">
+
+<body>
+    <div id="layout">
+        <!--专题列表-->
+        <div id="header">
+            <span class="icon-back sp1"></span>
+            <h4>专题列表</h4>
+        </div>
+
+        <!--主体内容-->
+        <div id="feature">
+            <ul>
+                <li>
+                    <a href="">
+                        <img src="./img/l1.jpg" alt="">
+                        <p>2016年七月新番</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <script type="text/html" id="featuresListTmp">
+        <ul>
+            {{each list as value i}}
+                <li>
+                    <a href="{{value.url}}">
+                        <img src="{{value.img}}" alt="">
+                        <p>{{value.title}}</p>
+                    </a>
+                </li>
+            {{/each}}
+        </ul>
+    </script>
+
+    <script src="./js/template.js"></script>
+    <script src="./lib/jquery/jquery.js"></script>
+    <!--<script src="./fonts/demo-files/demo.js"></script>-->
+    <script src="./lib/bootstrap/js/bootstrap.js"></script>
+    <script src="./js/features.js"></script>
+</body>
+
+</html>

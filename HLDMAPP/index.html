@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/index.css">
+  
+</head>
+
+<body>
+    <!--页面主体-->
+    <div id="layout">
+        <!--主页遮罩层-->
+        <div class="mask"></div>
+
+
+        <!--首页头部-->
+        <div id="header">
+            <span class="icon-menu sp1"></span>
+            <h3>红旅动漫</h3>
+            <span class="icon-search sp2"></span>
+        </div>
+
+
+        <!--轮播图-->
+        <div id="slide">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- 小圆点 -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <!--<li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
+                </ol>
+
+                <!-- 轮播图容器 -->
+                <ul class="carousel-inner" role="listbox">
+                    <li class="item active">
+                        <img src="./img/l1.jpg" alt="...">
+                        <p class="carousel-caption">
+                            红旅动漫资源分享群开放啦！！！
+                        </p>
+                    </li>
+                    <li class="item">
+                        <img src="./img/l2.jpg" alt="...">
+                        <p class="carousel-caption">
+                            红旅动漫资源分享群开放啦！！！
+                        </p>
+                    </li>
+                    <!--<div class="item">
+                        <img src="./img/l3.jpg" alt="...">
+                        <div class="carousel-caption">
+                            红旅动漫资源分享群开放啦！！！
+                        </div>
+                    </div>-->
+
+                </ul>
+
+
+            </div>
+        </div>
+        <!--导航-->
+        <div id="nav">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" data-type="1">新增连载</a></li>
+                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" data-type="2">新增完结</a></li>
+                <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab" data-type="3">推荐连载</a></li>
+                <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab" data-type="4">推荐完结</a></li>
+            </ul>
+            <!-- Tab panes -->
+        </div>
+
+        <!--内容-->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+                <ul>
+                    <li class="col-xs-6">
+                        <a href="">
+                            <img src="./img/c1.jpg" alt="">
+                            <p>连载12集</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="profile">
+                新增完结
+            </div>
+            <div role="tabpanel" class="tab-pane" id="messages">
+                推送连载
+            </div>
+            <div role="tabpanel" class="tab-pane" id="settings">
+                推荐完结
+            </div>
+        </div>
+    </div>
+
+
+    <!--左侧的导航栏-->
+    <div id="left_nav">
+        <ul class="list-group">
+            <li class="list-group-item"><a href="javascript:;"><img src="" alt=""></a> </li>
+            <li class="list-group-item"><a href="javascript:;">连载动漫-get <span class="icon-go"></span></a> </li>
+            <li class="list-group-item"><a href="javascript:;">专题列表-get <span class="icon-go"></span></a></li>
+            <li class="list-group-item"><a href="javascript:;">关于<span class="icon-go"></span></a></li>
+        </ul>
+    </div>
+
+
+
+    <script src="js/template.js"></script>
+
+    <!--轮播图模板-->
+    <script type="text/html" id="slideTmp">
+        <!--each是遍历的关键字
+    list是变量的数组
+    value是遍历的每一项
+    i是索引-->
+        {{each list as value i}}
+        <li class="item">
+            <img src="{{value.img}}" alt="...">
+            <p class="carousel-caption">
+                {{value.title}}
+            </p>
+        </li>
+        {{/each}}
+    </script>
+
+    <!--tab切换模板-->
+    <script type="text/html" id="cartoonListTmp">
+        {{each list as value i}}
+        <ul>
+            <li class="col-xs-6">
+                <a href="">
+                   <img src="{{list[i].img}}" alt="">
+                   <p>{{list[i].name}}</p>
+                </a>
+            </li>
+        </ul>
+        {{/each}}
+    </script>
+
+    <script src="./lib/jquery/jquery.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
